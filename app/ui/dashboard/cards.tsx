@@ -1,28 +1,28 @@
 import {
   BanknotesIcon,
   ClockIcon,
-  UserGroupIcon,
   InboxIcon,
+  UserGroupIcon
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 
 const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
-  pending: ClockIcon,
   invoices: InboxIcon,
+  pending: ClockIcon
 };
 
 export default async function Cards() {
   return (
     <>
-      <Card title="Collected" value={totalPaidInvoices} type="collected" />
-      <Card title="Pending" value={totalPendingInvoices} type="pending" />
-      <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
+      <Card title="Collected" type="collected" value={totalPaidInvoices} />
+      <Card title="Pending" type="pending" value={totalPendingInvoices} />
+      <Card title="Total Invoices" type="invoices" value={numberOfInvoices} />
       <Card
         title="Total Customers"
-        value={numberOfCustomers}
         type="customers"
+        value={numberOfCustomers}
       />
     </>
   );
@@ -31,7 +31,7 @@ export default async function Cards() {
 export function Card({
   title,
   value,
-  type,
+  type
 }: {
   title: string;
   value: number | string;
